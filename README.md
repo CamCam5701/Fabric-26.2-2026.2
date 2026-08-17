@@ -1,6 +1,6 @@
 # MCreator Fabric 26.2 Generator
 
-## This plugin is a fork from [Gordians Fabric 26.1.2 generator](https://mcreator.net/plugin/64512/mcreator-fabric-generator).
+## This plugin is a fork from [Goldians Fabric 26.1.2 generator](https://mcreator.net/plugin/64512/mcreator-fabric-generator).
 
 A plugin for MCreator, a code generator to create Minecraft mods. Which adds support for Minecraft Fabric 26.2
 
