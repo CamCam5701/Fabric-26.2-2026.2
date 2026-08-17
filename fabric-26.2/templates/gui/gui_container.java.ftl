@@ -25,6 +25,7 @@
 package ${package}.world.inventory;
 
 import ${package}.${JavaModName};
+import net.minecraft.server.level.ServerPlayer;
 
 <@javacompress>
 public class ${name}Menu extends AbstractContainerMenu implements ${JavaModName}Menus.MenuAccessor {
@@ -295,6 +296,28 @@ public class ${name}Menu extends AbstractContainerMenu implements ${JavaModName}
 		@Override public void removed(Player playerIn) {
 			super.removed(playerIn);
 
+			// Return all items left in the GUI's internal container when the menu closes.
+			// Without this, SimpleContainer contents are discarded when the menu is removed.
+			if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
+				if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
+					for (int i = 0; i < inventory.getContainerSize(); ++i) {
+						ItemStack stack = inventory.getItem(i);
+						if (!stack.isEmpty()) {
+							playerIn.drop(stack.copy(), false);
+							inventory.setItem(i, ItemStack.EMPTY);
+						}
+					}
+				} else {
+					for (int i = 0; i < inventory.getContainerSize(); ++i) {
+						ItemStack stack = inventory.getItem(i);
+						if (!stack.isEmpty()) {
+							playerIn.getInventory().placeItemBackInInventory(stack);
+							inventory.setItem(i, ItemStack.EMPTY);
+						}
+					}
+				}
+			}
+
 			<#if hasProcedure(data.onClosed)>
 				<@procedureOBJToCode data.onClosed/>
 			</#if>
@@ -356,4 +379,5 @@ public class ${name}Menu extends AbstractContainerMenu implements ${JavaModName}
 	}
 }
 </@javacompress>
+<#-- @formatter:on -->
 <#-- @formatter:on -->
