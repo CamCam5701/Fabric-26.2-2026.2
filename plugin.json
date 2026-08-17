@@ -7,11 +7,11 @@
   ],
   "info": {
     "name": "Minecraft Fabric 26.2 Generator",
-    "version": "2026.2-2.7.4-26.2",
+    "version": "2026.2-2.7.7-26.2",
     "description": "Fabric generator for Minecraft 26.2",
-    "author": "Goldorion, NerdyPuzzle and Spectrall; 26.2 port packaging",
+    "author": "CamCam5701, a fork of Goldorions Fabric 26.1.2 generator",
     "credits": "Based on the Fabric Generator for MCreator 2026.2",
-    "updateJSONURL": "https://raw.githubusercontent.com/Goldorion/Fabric-Generator-MCreator/refs/heads/26.2-2026.2/update.json",
-    "pluginPageID": 64512
+    "updateJSONURL": "",
+    "pluginPageID": ""
   }
 }
