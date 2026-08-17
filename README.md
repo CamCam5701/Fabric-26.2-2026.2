@@ -1,6 +1,6 @@
 # MCreator Fabric 26.2 Generator
 
-## This plugin is a fork from [Goldians Fabric 26.1.2 generator](https://mcreator.net/plugin/64512/mcreator-fabric-generator).
+## This plugin is a fork from [Goldorions Fabric 26.1.2 generator](https://mcreator.net/plugin/64512/mcreator-fabric-generator).
 
 A plugin for MCreator, a code generator to create Minecraft mods. Which adds support for Minecraft Fabric 26.2
 
@@ -18,8 +18,8 @@ This 26.2 port uses Fabric Loader 0.19.3, Loom 1.17-SNAPSHOT, Gradle 9.5.1, Java
 
 ## Credits/License
 
-Dev - CamCam5701, Chatgpt, a fork from [Goldorion](https://github.com/Goldorion)
-This generator re-uses code from the official MCreator's NeoForge generator and from [Gordians Fabric 26.1.2 generator](https://mcreator.net/plugin/64512/mcreator-fabric-generator) in the form of a fork.
+Dev - CamCam5701, a fork from [Goldorion](https://github.com/Goldorion)
+This generator re-uses code from the official MCreator's NeoForge generator and from [Goldorions Fabric 26.1.2 generator](https://mcreator.net/plugin/64512/mcreator-fabric-generator) in the form of a fork.
 
 The plugin's MCreator page is [here](https://mcreator.net/plugin/64512/mcreator-fabric-generator).
 
