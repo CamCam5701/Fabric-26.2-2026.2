@@ -360,8 +360,10 @@ e -> {
 		int x = ${name}Screen.this.x; <#-- #5582 - x and y provided by buttons are in-GUI, not in-world coordinates -->
 		int y = ${name}Screen.this.y;
 		if (<@procedureOBJToConditionCode component.displayCondition/>) {
+			// GUI button procedures must execute on the server only.
+			// The packet handler runs the procedure server-side; executing it here as well
+			// causes client/server inventory desynchronization for procedures that modify slots.
 			ClientPlayNetworking.send(new ${name}ButtonMessage(${btid}, x, y, z));
-			${name}ButtonMessage.handleButtonAction(entity, ${btid}, x, y, z);
 		}
 	</#if>
 }
@@ -390,4 +392,5 @@ e -> {
 		</#if>
 	</#if>
 </#macro>
+<#-- @formatter:on -->
 <#-- @formatter:on -->
