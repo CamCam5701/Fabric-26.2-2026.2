@@ -34,6 +34,11 @@
 package ${package}.world.features;
 
 <#assign configuration = generator.map(featuretype, "features", 1)>
+<#-- Minecraft 26.2 renamed SimpleRandomFeatureConfiguration to CompositeFeatureConfiguration.
+     Keep the existing feature-class mapping, but use the new configuration type. -->
+<#if configuration == "SimpleRandomFeatureConfiguration">
+	<#assign configuration = "CompositeFeatureConfiguration">
+</#if>
 
 <@javacompress>
 public class ${name}Feature extends ${generator.map(featuretype, "features")} {
